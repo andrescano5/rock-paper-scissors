@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    max-width: 100%;
+    background-image: url(https://images.alphacoders.com/605/605592.png);
+    background-size: cover;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    width: 98%;
+}
+
+.title-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    margin-bottom: 40px;
+    width: 70%;
+}
+
+.btn-container img{
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.btn-container img:hover {
+    transform: scale(1.2);
+}
+
+.btn-cont_wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 100%;
+    gap: 80px;
+    padding: 20px;
+    margin-bottom: 70px;
+    /* From https://css.glass */
+    background: rgba(248, 237, 85, 0.42);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgb(221, 208, 23);
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* From https://css.glass */
+    background: rgba(248, 237, 85, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgb(221, 208, 23);
+
+}
+
+h2{
+    margin-bottom: 30px;
+}
+
+.score-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player, .computer {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+}
+
+h3{
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+p {
+    font-weight: 900;
+    font-size: larger;
+}
+
