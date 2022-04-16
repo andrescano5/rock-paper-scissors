@@ -1,9 +1,25 @@
+// let rock = document.getElementById('rps-1')
+// rock.addEventListener("click", () => playerScore.innerText = count);
+// let paper = document.getElementById('rps-2');
+// paper.addEventListener("click", () => playerScore.innerText = count);
+// let scissors = document.getElementById('rps-3');
+// scissors.addEventListener("click", () => playerScore.innerText = count);
 const gameElements = ['rock', 'paper', 'scissors'];
 const winners = [];
+const playerScore = document.getElementById('player-score');
+const computerScore = document.getElementById('computer-score');
+let rock = document.getElementById('rps-1');
+let paper = document.getElementById('rps-2');
+let scissors = document.getElementById('rps-3');
+
+let count = 0;
 
 
 function game() {
-   
+    // for(let i = 1; i <= 5; i++){
+    //     playRound(i);
+    // }
+    playRound();
     winnerDisp();
 }
 
@@ -15,23 +31,49 @@ function playRound(round) {
     logRound(playerSelection, computerSelection, winner, round);
 }
 
+// function playerChoice(){
+  
+//     while(result == null){
+//         result = prompt('Select your element: Rock, Paper or Scissors');
+//     }
+//     result = result.toLowerCase();
+//     let check = validateInput(result)
+//     while (check == false){
+//         result =  prompt('type Rock, Paper or Scissors. Spelling needs to be exact, but capitalization doesnt matter');
+//         result = result.toLowerCase();
+//         check = validateInput(result);
+//     };
+//     return result
+// }
+
+
+
 function playerChoice(){
-    let result = prompt('Select your element: Rock, Paper or Scissors');
-    while(result == null){
-        result = prompt('Select your element: Rock, Paper or Scissors');
-    }
-    result = result.toLowerCase();
-    let check = validateInput(result)
-    while (check == false){
-        result =  prompt('type Rock, Paper or Scissors. Spelling needs to be exact, but capitalization doesnt matter');
-        result = result.toLowerCase();
-        check = validateInput(result);
-    };
+
+    rock.addEventListener("click", () => {result= 'rock'; console.log(result);
+    return result
+});
+    paper.addEventListener("click", () => {result= 'paper'; console.log(result);
+    return result
+});
+    scissors.addEventListener("click", () => {result= 'scissors'; 
+    console.log(result);
+    return result
+});
     return result
 }
 
 function computerChoice() {
     return gameElements[Math.floor(Math.random() * gameElements.length)];
+}
+function playerScoring(){
+    let playerScore = document.getElementById('player-score')
+    count = count+1;
+        playerScore.innerText = count;
+}
+function computerScoring(){
+    count = count+1;
+        computerScore.innerText = count;
 }
 
 
@@ -43,8 +85,10 @@ function checkWinner(choiceP, choiceC) {
     if(choiceP == choiceC){
         return 'Tie'
     } else if ((choiceP == "rock" && choiceC == "scissors") || (choiceP == "paper" && choiceC == "rock") || (choiceP == "scissors" && choiceC == "paper") ){
+        playerScoring();
         return 'You'
     }else {
+        computerScoring()
         return 'Computer';
     }
 }
